@@ -6,7 +6,7 @@ return [
             'email'                  => 'Dirección de Correo Electrónico',
             'forget-password-link'   => '¿Olvidaste tu Contraseña?',
             'password'               => 'Contraseña',
-            'powered-by-description' => 'Desarrollado por :bagisto, un proyecto de código abierto de :webkul.',
+            'powered-by-description' => 'Panel administración - Tienda Grupo Coris.',
             'submit-btn'             => 'Iniciar Sesión',
             'title'                  => 'Iniciar Sesión',
         ],
@@ -16,7 +16,7 @@ return [
                 'email'                  => 'Correo Electrónico Registrado',
                 'email-not-exist'        => 'El Correo Electrónico no Existe',
                 'page-title'             => 'Olvidar Contraseña',
-                'powered-by-description' => 'Desarrollado por :bagisto, un proyecto de código abierto de :webkul.',
+                'powered-by-description' => 'Panel administración - Tienda Grupo Coris.',
                 'reset-link-sent'        => 'Enlace para Restablecer la Contraseña Enviado',
                 'sign-in-link'           => '¿Volver a Iniciar Sesión?',
                 'submit-btn'             => 'Restablecer',
@@ -29,7 +29,7 @@ return [
             'confirm-password'       => 'Confirmar Contraseña',
             'email'                  => 'Correo Electrónico Registrado',
             'password'               => 'Contraseña',
-            'powered-by-description' => 'Desarrollado por :bagisto, un proyecto de código abierto de :webkul.',
+            'powered-by-description' => 'Panel administración - Tienda Grupo Coris.',
             'submit-btn'             => 'Restablecer Contraseña',
             'title'                  => 'Restablecer Contraseña',
         ],
@@ -4711,7 +4711,7 @@ return [
             ],
 
             'powered-by' => [
-                'description' => 'Desarrollado por :bagisto, un proyecto de código abierto de :webkul.',
+                'description' => 'Panel administración - Tienda Grupo Coris.',
             ],
         ],
 

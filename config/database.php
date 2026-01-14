@@ -97,6 +97,18 @@ return [
             'sslmode'        => 'prefer',
         ],
 
+        'sqlsrv_erp' => [
+            'driver' => 'sqlsrv',
+            'host' => env('DB_ERP_HOST', 'localhost'),
+            'port' => env('DB_ERP_PORT', '1433'),
+            'database' => env('DB_ERP_DATABASE'),
+            'username' => env('DB_ERP_USERNAME'),
+            'password' => env('DB_ERP_PASSWORD'),
+            'charset' => 'utf8',
+            'prefix' => '',
+        ],
+
+
         'sqlsrv' => [
             'driver'         => 'sqlsrv',
             'url'            => env('DB_URL'),
@@ -147,7 +159,7 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix'  => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+            'prefix'  => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_database_'),
         ],
 
         'default' => [
