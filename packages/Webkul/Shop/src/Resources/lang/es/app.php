@@ -5,10 +5,10 @@ return [
         'forgot-password' => [
             'already-sent'         => 'Ya se envió el correo de restablecimiento de contraseña.',
             'back'                 => 'Volver a iniciar sesión',
-            'bagisto'              => 'Bagisto',
+            'bagisto'              => 'Tienda Grupo Coris',
             'email'                => 'Correo electrónico',
             'email-not-exist'      => 'No podemos encontrar un usuario con esa dirección de correo electrónico.',
-            'footer'               => '© Derechos de autor 2010 - :current_year, Webkul Software (Registrado en India). Todos los derechos reservados.',
+            'footer'               => '© Grupo Coris - :current_year.',
             'forgot-password-text' => 'Si olvidó su contraseña, recupérela ingresando su dirección de correo electrónico.',
             'page-title'           => '¿Olvidó su contraseña?',
             'reset-link-sent'      => 'Hemos enviado por correo electrónico el enlace para restablecer su contraseña.',
@@ -19,21 +19,21 @@ return [
 
         'reset-password' => [
             'back-link-title'  => 'Volver a Iniciar Sesión',
-            'bagisto'          => 'Bagisto',
+            'bagisto'          => 'Tienda Grupo Coris',
             'confirm-password' => 'Confirmar Contraseña',
             'email'            => 'Correo Electrónico Registrado',
-            'footer'           => '© Derechos de autor 2010 - :current_year, Webkul Software (Registrada en India). Todos los derechos reservados.',
+            'footer'           => '© Grupo Coris - :current_year.',
             'password'         => 'Contraseña',
             'submit-btn-title' => 'Restablecer Contraseña',
             'title'            => 'Restablecer Contraseña',
         ],
 
         'login-form' => [
-            'bagisto'             => 'Bagisto',
+            'bagisto'             => 'Tienda Grupo Coris',
             'button-title'        => 'Iniciar Sesión',
             'create-your-account' => 'Crea tu cuenta',
             'email'               => 'Correo Electrónico',
-            'footer'              => '© Derechos de autor 2010 - :current_year, Webkul Software (Registrada en India). Todos los derechos reservados.',
+            'footer'              => '© Grupo Coris - :current_year.',
             'forgot-pass'         => '¿Olvidaste tu Contraseña?',
             'form-login-text'     => 'Si tienes una cuenta, inicia sesión con tu dirección de correo electrónico.',
             'invalid-credentials' => 'Por favor, verifica tus credenciales e inténtalo de nuevo.',
@@ -48,13 +48,13 @@ return [
 
         'signup-form' => [
             'account-exists'              => '¿Ya tienes una cuenta?',
-            'bagisto'                     => 'Bagisto',
+            'bagisto'                     => 'Tienda Grupo Coris',
             'button-title'                => 'Registrarse',
             'click-here'                  => 'Haga clic aquí',
             'confirm-pass'                => 'Confirmar Contraseña',
             'email'                       => 'Correo Electrónico',
             'first-name'                  => 'Nombre',
-            'footer'                      => '© Derechos de autor 2010 - :current_year, Webkul Software (Registrada en India). Todos los derechos reservados.',
+            'footer'                      => '© Grupo Coris - :current_year.',
             'form-signup-text'            => 'Si eres nuevo en nuestra tienda, estamos encantados de tenerte como miembro.',
             'last-name'                   => 'Apellido',
             'page-title'                  => 'Convertirse en Usuario',
@@ -146,7 +146,7 @@ return [
                     'state'          => 'Estado',
                     'street-address' => 'Dirección',
                     'title'          => 'Dirección',
-                    'vat-id'         => 'ID de IVA',
+                    'vat-id'         => 'Número de Identificación',
                 ],
 
                 'edit' => [
@@ -164,7 +164,7 @@ return [
                     'street-address' => 'Dirección',
                     'title'          => 'Dirección',
                     'update-btn'     => 'Actualizar',
-                    'vat-id'         => 'ID de IVA',
+                    'vat-id'         => 'Número de Identificación',
                 ],
             ],
 
@@ -444,7 +444,7 @@ return [
                         'postcode'   => 'Código postal',
                         'state'      => 'Estado',
                         'title'      => 'Información de la dirección',
-                        'vat-id'     => 'ID de IVA',
+                        'vat-id'     => 'Número de Identificación',
                     ],
 
                     'order-info' => [
@@ -490,7 +490,7 @@ return [
                     'bottom' => [
                         'all'           => 'Todo',
                         'back-button'   => 'Volver al menú principal',
-                        'bagisto'       => 'Bagisto',
+                        'bagisto'       => 'Tienda Grupo Coris',
                         'categories'    => 'Categorías',
                         'compare'       => 'Comparar',
                         'dropdown-text' => 'Gestionar carrito, pedidos y lista de deseos',
@@ -511,7 +511,7 @@ return [
                 'mobile' => [
                     'account'       => 'Cuenta',
                     'back-button'   => 'Volver al menú principal',
-                    'bagisto'       => 'Bagisto',
+                    'bagisto'       => 'Tienda Grupo Coris',
                     'compare'       => 'Comparar',
                     'currencies'    => 'Monedas',
                     'dropdown-text' => 'Gestionar carrito, pedidos y lista de deseos',
@@ -537,7 +537,7 @@ return [
                 'customer-service'       => 'Servicio al cliente',
                 'email'                  => 'Correo Electrónico',
                 'footer-content'         => 'Contenido del pie de página',
-                'footer-text'            => '© Derechos de autor 2010 - :current_year, Webkul Software (registrada en India). Todos los derechos reservados.',
+                'footer-text'            => '',
                 'locale'                 => 'Idioma',
                 'newsletter-text'        => '¡Prepárate para nuestro divertido boletín!',
                 'order-return'           => 'Pedido y devolución',
@@ -937,7 +937,7 @@ return [
             'suspended-account-message' => 'Tu cuenta ha sido suspendida.',
 
             'index' => [
-                'bagisto'                  => 'Bagisto',
+                'bagisto'                  => 'Tienda Grupo Coris',
                 'cart'                     => 'Carrito',
                 'continue-shopping'        => 'Continuar Comprando',
                 'empty-product'            => 'No tienes productos en tu carrito.',
@@ -1030,7 +1030,7 @@ return [
                 'street-address'         => 'Dirección',
                 'telephone'              => 'Teléfono',
                 'title'                  => 'Dirección',
-                'vat-id'                 => 'ID de IVA',
+                'vat-id'                 => 'Número de Identificación',
             ],
 
             'index' => [

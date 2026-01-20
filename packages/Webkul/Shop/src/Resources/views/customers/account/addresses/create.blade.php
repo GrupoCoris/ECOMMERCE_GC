@@ -2,46 +2,44 @@
     <!-- Page Title -->
     <x-slot:title>
         @lang('shop::app.customers.account.addresses.create.add-address')
-    </x-slot>
+        </x-slot>
 
-    <!-- Breadcrumbs -->
-    @if ((core()->getConfigData('general.general.breadcrumbs.shop')))
+        <!-- Breadcrumbs -->
+        @if ((core()->getConfigData('general.general.breadcrumbs.shop')))
         @section('breadcrumbs')
-            <x-shop::breadcrumbs name="addresses.create" />
+        <x-shop::breadcrumbs name="addresses.create" />
         @endSection
-    @endif
+        @endif
 
-    <div class="max-md:hidden">
-        <x-shop::layouts.account.navigation />
-    </div>
-
-    <div class="mx-4 flex-auto max-md:mx-6 max-sm:mx-4">
-        <div class="mb-8 flex items-center max-md:mb-5">
-            <!-- Back Button -->
-            <a
-                class="grid md:hidden"
-                href="{{ route('shop.customers.account.addresses.index') }}"
-            >
-                <span class="icon-arrow-left rtl:icon-arrow-right text-2xl"></span>
-            </a>
-
-            <h2 class="text-2xl font-medium max-md:text-xl max-sm:text-base ltr:ml-2.5 md:ltr:ml-0 rtl:mr-2.5 md:rtl:mr-0">
-                @lang('shop::app.customers.account.addresses.create.add-address')
-            </h2>
+        <div class="max-md:hidden">
+            <x-shop::layouts.account.navigation />
         </div>
 
-        <v-create-customer-address>
-            <!--Address Shimmer-->
-            <x-shop::shimmer.form.control-group :count="10" />
-        </v-create-customer-address>
+        <div class="mx-4 flex-auto max-md:mx-6 max-sm:mx-4">
+            <div class="mb-8 flex items-center max-md:mb-5">
+                <!-- Back Button -->
+                <a
+                    class="grid md:hidden"
+                    href="{{ route('shop.customers.account.addresses.index') }}">
+                    <span class="icon-arrow-left rtl:icon-arrow-right text-2xl"></span>
+                </a>
 
-    </div>
+                <h2 class="text-2xl font-medium max-md:text-xl max-sm:text-base ltr:ml-2.5 md:ltr:ml-0 rtl:mr-2.5 md:rtl:mr-0">
+                    @lang('shop::app.customers.account.addresses.create.add-address')
+                </h2>
+            </div>
 
-    @push('scripts')
+            <v-create-customer-address>
+                <!--Address Shimmer-->
+                <x-shop::shimmer.form.control-group :count="10" />
+            </v-create-customer-address>
+
+        </div>
+
+        @push('scripts')
         <script
             type="text/x-template"
-            id="v-create-customer-address-template"
-        >
+            id="v-create-customer-address-template">
             <div>
                 <x-shop::form :action="route('shop.customers.account.addresses.store')">
                     {!! view_render_event('bagisto.shop.customers.account.addresses.create_form_controls.before') !!}
@@ -124,25 +122,6 @@
                     </x-shop::form.control-group>
 
                     {!! view_render_event('bagisto.shop.customers.account.addresses.create_form_controls.email.after') !!}
-
-                    <!-- Vat Id -->
-                    <x-shop::form.control-group>
-                        <x-shop::form.control-group.label>
-                            @lang('shop::app.customers.account.addresses.create.vat-id')
-                        </x-shop::form.control-group.label>
-
-                        <x-shop::form.control-group.control
-                            type="text"
-                            name="vat_id"
-                            :value="old('vat_id')"
-                            :label="trans('shop::app.customers.account.addresses.create.vat-id')"
-                            :placeholder="trans('shop::app.customers.account.addresses.create.vat-id')"
-                        />
-
-                        <x-shop::form.control-group.error control-name="vat_id" />
-                    </x-shop::form.control-group>
-
-                    {!! view_render_event('bagisto.shop.customers.account.addresses.create_form_controls.vat_id.after') !!}
 
                     <!-- Street Address -->
                     <x-shop::form.control-group>
@@ -350,33 +329,33 @@
                 {!! view_render_event('bagisto.shop.customers.account.address.create.after') !!}
             </div>
         </script>
-    
+
         <script type="module">
             app.component('v-create-customer-address', {
                 template: '#v-create-customer-address-template',
-    
+
                 data() {
                     return {
                         country: "{{ old('country') }}",
 
                         state: "{{ old('state') }}",
 
-                        countryStates: @json(core()->groupedStatesByCountries()),
+                        countryStates: @json(core() - > groupedStatesByCountries()),
                     }
                 },
-    
+
                 methods: {
                     haveStates() {
                         /*
-                        * The double negation operator is used to convert the value to a boolean.
-                        * It ensures that the final result is a boolean value,
-                        * true if the array has a length greater than 0, and otherwise false.
-                        */
+                         * The double negation operator is used to convert the value to a boolean.
+                         * It ensures that the final result is a boolean value,
+                         * true if the array has a length greater than 0, and otherwise false.
+                         */
                         return !!this.countryStates[this.country]?.length;
                     },
                 }
             });
         </script>
-    @endpush
+        @endpush
 
 </x-shop::layouts.account>

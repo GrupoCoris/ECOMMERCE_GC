@@ -22,7 +22,12 @@
 
 @push('scripts')
     <script>
-        localStorage.setItem('categories', JSON.stringify(@json($categories)));
+        {{-- Verificamos si la variable existe antes de intentar convertirla a JSON --}}
+        @isset($categories)
+            localStorage.setItem('categories', JSON.stringify(@json($categories)));
+        @else
+            console.warn('Bagisto: La variable $categories no está disponible en esta vista.');
+        @endisset
     </script>
 @endpush
 

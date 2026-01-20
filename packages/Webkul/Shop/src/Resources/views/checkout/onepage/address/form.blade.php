@@ -1,9 +1,8 @@
 @pushOnce('scripts')
-    <script
-        type="text/x-template"
-        id="v-checkout-address-form-template"
-    >
-        <div class="mt-2 max-md:mt-3">
+<script
+    type="text/x-template"
+    id="v-checkout-address-form-template">
+    <div class="mt-2 max-md:mt-3">
             <x-shop::form.control-group class="hidden">
                 <x-shop::form.control-group.control
                     type="text"
@@ -93,13 +92,14 @@
             <!-- Vat ID -->
             <template v-if="controlName=='billing'">
                 <x-shop::form.control-group>
-                    <x-shop::form.control-group.label>
+                    <x-shop::form.control-group.label class="required !mt-0">
                         @lang('shop::app.checkout.onepage.address.vat-id')
                     </x-shop::form.control-group.label>
 
                     <x-shop::form.control-group.control
                         type="text"
                         ::name="controlName + '.vat_id'"
+                        rules="required|numeric"
                         ::value="address.vat_id"
                         :label="trans('shop::app.checkout.onepage.address.vat-id')"
                         :placeholder="trans('shop::app.checkout.onepage.address.vat-id')"
@@ -295,74 +295,74 @@
         </div>
     </script>
 
-    <script type="module">
-        app.component('v-checkout-address-form', {
-            template: '#v-checkout-address-form-template',
+<script type="module">
+    app.component('v-checkout-address-form', {
+        template: '#v-checkout-address-form-template',
 
-            props: {
-                controlName: {
-                    type: String,
-                    required: true,
-                },
-
-                address: {
-                    type: Object,
-
-                    default: () => ({
-                        id: 0,
-                        company_name: '',
-                        first_name: '',
-                        last_name: '',
-                        email: '',
-                        address: [],
-                        country: '',
-                        state: '',
-                        city: '',
-                        postcode: '',
-                        phone: '',
-                    }),
-                },
+        props: {
+            controlName: {
+                type: String,
+                required: true,
             },
 
-            data() {
-                return {
-                    selectedCountry: this.address.country,
+            address: {
+                type: Object,
 
-                    countries: [],
-
-                    states: null,
-                }
+                default: () => ({
+                    id: 0,
+                    company_name: '',
+                    first_name: '',
+                    last_name: '',
+                    email: '',
+                    address: [],
+                    country: '',
+                    state: '',
+                    city: '',
+                    postcode: '',
+                    phone: '',
+                }),
             },
+        },
 
-            computed: {
-                haveStates() {
-                    return !! this.states[this.selectedCountry]?.length;
-                },
-            },
+        data() {
+            return {
+                selectedCountry: this.address.country,
 
-            mounted() {
-                this.getCountries();
+                countries: [],
 
-                this.getStates();
-            },
-
-            methods: {
-                getCountries() {
-                    this.$axios.get("{{ route('shop.api.core.countries') }}")
-                        .then(response => {
-                            this.countries = response.data.data;
-                        })
-                        .catch(() => {});
-                },
-
-                getStates() {
-                    this.$axios.get("{{ route('shop.api.core.states') }}")
-                        .then(response => {
-                            this.states = response.data.data;
-                        })
-                        .catch(() => {});
-                },
+                states: null,
             }
-        });
-    </script>
+        },
+
+        computed: {
+            haveStates() {
+                return !!this.states[this.selectedCountry]?.length;
+            },
+        },
+
+        mounted() {
+            this.getCountries();
+
+            this.getStates();
+        },
+
+        methods: {
+            getCountries() {
+                this.$axios.get("{{ route('shop.api.core.countries') }}")
+                    .then(response => {
+                        this.countries = response.data.data;
+                    })
+                    .catch(() => {});
+            },
+
+            getStates() {
+                this.$axios.get("{{ route('shop.api.core.states') }}")
+                    .then(response => {
+                        this.states = response.data.data;
+                    })
+                    .catch(() => {});
+            },
+        }
+    });
+</script>
 @endPushOnce
