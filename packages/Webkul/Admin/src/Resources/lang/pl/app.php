@@ -1809,7 +1809,7 @@ return [
                         'state'              => 'Stan',
                         'street-address'     => 'Adres ulicy',
                         'title'              => 'Utwórz adres',
-                        'vat-id'             => 'VAT ID',
+                        'vat-id'             => 'Identification Number',
                     ],
 
                     'edit' => [
@@ -1828,7 +1828,7 @@ return [
                         'state'           => 'Stan',
                         'street-address'  => 'Adres ulicy',
                         'title'           => 'Edytuj adres',
-                        'vat-id'          => 'VAT ID',
+                        'vat-id'          => 'Identification Number',
                     ],
 
                     'address-delete-success' => 'Adres pomyślnie usunięty',

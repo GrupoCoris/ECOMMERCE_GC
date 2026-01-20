@@ -40,8 +40,6 @@ class HomeController extends Controller
 
         $categories = $this->categoryRepository->getVisibleCategoryTree(core()->getCurrentChannel()->root_category_id);
 
-        $categories = CategoryTreeResource::collection($categories);
-
         return view('shop::home.index', compact('customizations', 'categories'));
     }
 

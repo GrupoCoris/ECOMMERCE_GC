@@ -36,7 +36,7 @@ class AddressRequest extends FormRequest
             'city'            => ['required'],
             'postcode'        => ['required', new PostCode],
             'phone'           => ['required', new PhoneNumber],
-            'vat_id'          => [(new VatIdRule)->setCountry($this->input('country'))],
+            'vat_id' => ['required', 'numeric'],
             'email'           => ['required'],
             'default_address' => ['sometimes', 'required', 'in:0,1'],
         ];

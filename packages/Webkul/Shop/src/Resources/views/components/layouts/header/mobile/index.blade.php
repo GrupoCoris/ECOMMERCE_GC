@@ -29,7 +29,7 @@
                 <img
                     src="{{ core()->getCurrentChannel()->logo_url ?? bagisto_asset('images/logo.svg') }}"
                     alt="{{ config('app.name') }}"
-                    width="131"
+                    width="300"
                     height="29"
                 >
             </a>
@@ -114,7 +114,7 @@
                             <x-slot:content class="!p-0">
                                 <div class="grid gap-2.5 p-5 pb-0">
                                     <p class="text-xl font-dmserif" v-pre>
-                                        @lang('shop::app.components.layouts.header.mobile.welcome')’
+                                        @lang('shop::app.components.layouts.header.mobile.welcome')
                                         {{ auth()->guard('customer')->user()->first_name }}
                                     </p>
 
@@ -249,7 +249,7 @@
                         <img
                             src="{{ core()->getCurrentChannel()->logo_url ?? bagisto_asset('images/logo.svg') }}"
                             alt="{{ config('app.name') }}"
-                            width="131"
+                            width="300"
                             height="29"
                         >
                     </a>
@@ -280,7 +280,7 @@
 
                         @auth('customer')
                             <div class="flex flex-col justify-between gap-2.5 max-md:gap-0">
-                                <p class="text-2xl break-all font-mediums max-md:text-xl">Hello! {{ auth()->user()?->first_name }}</p>
+                                <p class="text-2xl break-all font-mediums max-md:text-xl">Hola {{ auth()->user()?->first_name }}</p>
 
                                 <p class="no-underline text-zinc-500 max-md:text-sm">{{ auth()->user()?->email }}</p>
                             </div>

@@ -130,9 +130,9 @@ return [
         'core' => [
             'channels' => [
                 'name'             => 'Default',
-                'meta-title'       => 'Demo store',
-                'meta-keywords'    => 'Demo store meta keyword',
-                'meta-description' => 'Demo store meta description',
+                'meta-title'       => 'Tienda Grupo Coris',
+                'meta-keywords'    => 'Tienda Grupo Coris meta keyword',
+                'meta-description' => 'Tienda Grupo Coris meta description',
             ],
 
             'currencies' => [

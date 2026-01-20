@@ -275,7 +275,7 @@ return [
                         'street-address'   => 'Street Address',
                         'telephone'        => 'Telephone',
                         'title'            => 'Address',
-                        'vat-id'           => 'Vat ID',
+                        'vat-id'           => 'Identification Number',
                     ],
 
                     'payment' => [
@@ -1809,7 +1809,7 @@ return [
                         'state'              => 'State',
                         'street-address'     => 'Street Address',
                         'title'              => 'Create Address',
-                        'vat-id'             => 'Vat ID',
+                        'vat-id'             => 'Identification Number',
                     ],
 
                     'edit' => [
@@ -1828,7 +1828,7 @@ return [
                         'state'           => 'State',
                         'street-address'  => 'Street Address',
                         'title'           => 'Edit Address',
-                        'vat-id'          => 'Vat ID',
+                        'vat-id'          => 'Identification Number',
                     ],
 
                     'address-delete-success' => 'Address Deleted Successfully',

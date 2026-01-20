@@ -146,7 +146,7 @@ return [
                     'state'          => 'State',
                     'street-address' => 'Street Address',
                     'title'          => 'Address',
-                    'vat-id'         => 'Vat ID',
+                    'vat-id'         => 'Identification Number',
                 ],
 
                 'edit' => [
@@ -164,7 +164,7 @@ return [
                     'street-address' => 'Street Address',
                     'title'          => 'Address',
                     'update-btn'     => 'Update',
-                    'vat-id'         => 'Vat ID',
+                    'vat-id'         => 'Identification Number',
                 ],
             ],
 
@@ -444,7 +444,7 @@ return [
                         'postcode'   => 'Postcode',
                         'state'      => 'State',
                         'title'      => 'Address Information',
-                        'vat-id'     => 'Vat ID',
+                        'vat-id'     => 'Identification Number',
                     ],
 
                     'order-info' => [
@@ -969,7 +969,7 @@ return [
                 'continue-to-checkout' => 'Continue to Checkout',
                 'empty-cart'           => 'Your cart is empty',
                 'excl-tax'             => 'Excl. Tax:',
-                'offer-on-orders'      => 'Get Up To 30% OFF on your 1st order',
+                'offer-on-orders'      => '',
                 'remove'               => 'Remove',
                 'see-details'          => 'See Details',
                 'shopping-cart'        => 'Shopping Cart',
@@ -1030,7 +1030,7 @@ return [
                 'street-address'         => 'Street Address',
                 'telephone'              => 'Telephone',
                 'title'                  => 'Address',
-                'vat-id'                 => 'Vat ID',
+                'vat-id'                 => 'Identification Number',
             ],
 
             'index' => [

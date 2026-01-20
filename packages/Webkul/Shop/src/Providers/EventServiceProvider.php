@@ -53,6 +53,7 @@ class EventServiceProvider extends ServiceProvider
          */
         'checkout.order.save.after' => [
             [Order::class, 'afterCreated'],
+            'App\Listeners\SyncOrderERP',
         ],
 
         'sales.order.cancel.after' => [

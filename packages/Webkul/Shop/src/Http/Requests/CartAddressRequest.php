@@ -60,7 +60,8 @@ class CartAddressRequest extends FormRequest
 
         if ($addressType == 'billing') {
             $this->mergeWithRules([
-                "{$addressType}.vat_id" => [(new VatIdRule)->setCountry($this->input('billing.country'))],
+                // Cambiamos la regla personalizada por validaciones estándar de Laravel
+                "{$addressType}.vat_id" => ['required', 'string', 'min:9', 'max:15'],
             ]);
         }
     }
