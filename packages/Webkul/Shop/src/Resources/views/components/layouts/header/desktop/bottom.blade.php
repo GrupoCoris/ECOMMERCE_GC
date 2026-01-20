@@ -14,7 +14,7 @@
             aria-label="@lang('shop::app.components.layouts.header.desktop.bottom.bagisto')"
         >
             <img
-                src="{{ core()->getCurrentChannel()->logo_url ?? bagisto_asset('images/logo.svg') }}"
+                src="{{ core()->getCurrentChannel()->logo_url ?? bagisto_asset('images/logo_login.png') }}"
                 width="300"
                 height="29"
                 alt="{{ config('app.name') }}"
@@ -185,7 +185,7 @@
                     <x-slot:content class="!p-0">
                         <div class="grid gap-2.5 p-5 pb-0">
                             <p class="text-xl font-dmserif" v-pre>
-                                @lang('shop::app.components.layouts.header.desktop.bottom.welcome')’
+                                @lang('shop::app.components.layouts.header.desktop.bottom.welcome')
                                 {{ auth()->guard('customer')->user()->first_name }}
                             </p>
 

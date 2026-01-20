@@ -275,7 +275,7 @@ return [
                         'street-address'   => 'Dirección',
                         'telephone'        => 'Teléfono',
                         'title'            => 'Dirección',
-                        'vat-id'           => 'NIF',
+                        'vat-id'           => 'Número de Identificación',
                     ],
 
                     'payment' => [
@@ -1809,7 +1809,7 @@ return [
                         'state'              => 'Estado',
                         'street-address'     => 'Dirección',
                         'title'              => 'Crear dirección',
-                        'vat-id'             => 'ID de IVA',
+                        'vat-id'             => 'Número de Identificación',
                     ],
 
                     'edit' => [
@@ -1828,7 +1828,7 @@ return [
                         'state'           => 'Estado',
                         'street-address'  => 'Dirección',
                         'title'           => 'Editar dirección',
-                        'vat-id'          => 'ID de IVA',
+                        'vat-id'          => 'Número de Identificación',
                     ],
 
                     'address-delete-success' => 'Dirección eliminada exitosamente',

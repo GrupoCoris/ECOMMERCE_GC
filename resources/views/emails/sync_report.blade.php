@@ -22,7 +22,7 @@
 
 <body>
     <div class="container">
-        <h2>Reporte de Sincronización de Productos ERP - Bagisto</h2>
+        <h2>Reporte de Sincronización de ERP - Bagisto</h2>
         <p>Estado: <span class="status-{{ $status }}">{{ $status }}</span></p>
         <hr>
         <p><strong>Detalles:</strong></p>

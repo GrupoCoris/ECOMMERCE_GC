@@ -1809,7 +1809,7 @@ return [
                         'state'              => '都道府県',
                         'street-address'     => '住所',
                         'title'              => '住所を作成',
-                        'vat-id'             => 'VAT ID',
+                        'vat-id'             => 'Identification Number',
                     ],
 
                     'edit' => [
@@ -1828,7 +1828,7 @@ return [
                         'state'           => '都道府県',
                         'street-address'  => '住所',
                         'title'           => '住所を編集',
-                        'vat-id'          => 'VAT ID',
+                        'vat-id'          => 'Identification Number',
                     ],
 
                     'address-delete-success' => '住所が正常に削除されました',

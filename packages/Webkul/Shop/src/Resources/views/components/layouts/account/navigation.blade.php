@@ -16,7 +16,7 @@
         <div class="flex flex-col justify-between">
             <p 
                 class="text-2xl break-all font-mediums max-md:text-xl"
-                v-text="'Hello! {{ $customer->first_name }}'"
+                v-text="'Hola {{ $customer->first_name }}'"
             > 
             </p>
 

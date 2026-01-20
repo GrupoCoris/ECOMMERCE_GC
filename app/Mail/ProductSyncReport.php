@@ -27,7 +27,7 @@ class ProductSyncReport extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Sincronización de Productos ERP - Bagisto',
+            subject: 'Sincronización de ERP - Bagisto',
         );
     }
 

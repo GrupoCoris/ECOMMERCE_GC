@@ -72,6 +72,7 @@ class SyncErpProducts extends Command
                     'visible_individually' => 1,
                     'short_description'  => $erpItem->NOMBRE,
                     'description'        => $erpItem->NOMBRE,
+                    'tax_category_id'      => 1,
                 ];
 
                 // Insertar atributos uno a uno (simulando lo que hace el repositorio pero sin tocar imágenes)
@@ -88,6 +89,10 @@ class SyncErpProducts extends Command
                         if ($attribute->type == 'boolean') $column = 'boolean_value';
                         // Si el tipo es 'text', la columna es 'textarea_value'
                         if ($attribute->type == 'text' || $attribute->type == 'textarea') $column = 'text_value';
+                        // IMPORTANTE: tax_category_id es tipo select, usa integer_value
+                        if ($attribute->type == 'select') {
+                            $column = 'integer_value';
+                        }
 
                         DB::table('product_attribute_values')->insert([
                             'product_id'   => $product->id,
@@ -243,7 +248,7 @@ class SyncErpProducts extends Command
     {
 
         try {
-            Mail::to('soporte@centralveterinaria.com')->cc(['gsalas@grupocoris.com','crbrenes@grupocoris.com'])->send(new ProductSyncReport($status, $details));
+            Mail::to('soporte@centralveterinaria.com')->cc(['gsalas@grupocoris.com', 'crbrenes@grupocoris.com','jecorrales@grupocoris.com'])->send(new ProductSyncReport("SYNC PRODUCTOS $status", $details));
             $this->info("Correo de notificación enviado.");
         } catch (\Exception $e) {
             $this->error("No se pudo enviar el correo: " . $e->getMessage());

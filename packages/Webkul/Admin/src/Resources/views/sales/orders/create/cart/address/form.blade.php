@@ -37,6 +37,7 @@
                 <x-admin::form.control-group.control
                     type="text"
                     ::name="controlName + '.vat_id'"
+                    rules="required|numeric"
                     ::value="address.vat_id"
                     :label="trans('admin::app.sales.orders.create.cart.address.vat-id')"
                     :placeholder="trans('admin::app.sales.orders.create.cart.address.vat-id')"

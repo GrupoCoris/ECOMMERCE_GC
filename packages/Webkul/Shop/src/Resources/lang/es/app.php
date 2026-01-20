@@ -146,7 +146,7 @@ return [
                     'state'          => 'Estado',
                     'street-address' => 'Dirección',
                     'title'          => 'Dirección',
-                    'vat-id'         => 'ID de IVA',
+                    'vat-id'         => 'Número de Identificación',
                 ],
 
                 'edit' => [
@@ -164,7 +164,7 @@ return [
                     'street-address' => 'Dirección',
                     'title'          => 'Dirección',
                     'update-btn'     => 'Actualizar',
-                    'vat-id'         => 'ID de IVA',
+                    'vat-id'         => 'Número de Identificación',
                 ],
             ],
 
@@ -444,7 +444,7 @@ return [
                         'postcode'   => 'Código postal',
                         'state'      => 'Estado',
                         'title'      => 'Información de la dirección',
-                        'vat-id'     => 'ID de IVA',
+                        'vat-id'     => 'Número de Identificación',
                     ],
 
                     'order-info' => [
@@ -1030,7 +1030,7 @@ return [
                 'street-address'         => 'Dirección',
                 'telephone'              => 'Teléfono',
                 'title'                  => 'Dirección',
-                'vat-id'                 => 'ID de IVA',
+                'vat-id'                 => 'Número de Identificación',
             ],
 
             'index' => [
