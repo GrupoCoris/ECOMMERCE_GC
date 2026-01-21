@@ -24,6 +24,7 @@ package-lock.json
 /public/vendor
 /lang/vendor
 /storage/*.key
+/storage/laravel.log
 /storage/dcc-data/
 /test-results
 /vendor
