@@ -143,10 +143,10 @@ class SyncErpProducts extends Command
 
                         $this->info("Se vincularon " . count($matches) . " imágenes para el SKU: {$sku}");
                     } else {
-                        $this->warn("Imagen física no encontrada para SKU: {$sku} en path: {$pattern}, eliminando artículo creado.");
-                        // Eliminamos los valores previos y artículo creado
-                        DB::table('product_attribute_values')->where('product_id', $product->id)->delete();
-                        DB::table('products')->where('id', $product->id)->delete();
+                        $this->warn("Imagen física no encontrada para SKU: {$sku} en path: {$pattern}, inactivando.");
+                        // actualizamos el estado a 0 (inactivo)
+                        DB::table('products')->where('id', $product->id)->update(['status' => 0]);
+                        DB::table('product_flat')->where('product_id', $product->id)->update(['status' => 0]);
                     }
                 }
             }
@@ -248,7 +248,7 @@ class SyncErpProducts extends Command
     {
 
         try {
-            Mail::to('soporte@centralveterinaria.com')->cc(['gsalas@grupocoris.com', 'crbrenes@grupocoris.com','jecorrales@grupocoris.com'])->send(new ProductSyncReport("SYNC PRODUCTOS $status", $details));
+            Mail::to('soporte@centralveterinaria.com')->cc(['gsalas@grupocoris.com', 'crbrenes@grupocoris.com', 'jecorrales@grupocoris.com'])->send(new ProductSyncReport("SYNC PRODUCTOS $status", $details));
             $this->info("Correo de notificación enviado.");
         } catch (\Exception $e) {
             $this->error("No se pudo enviar el correo: " . $e->getMessage());
