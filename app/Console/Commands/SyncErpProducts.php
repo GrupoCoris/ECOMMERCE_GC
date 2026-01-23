@@ -145,7 +145,7 @@ class SyncErpProducts extends Command
                     } else {
                         $this->warn("Imagen física no encontrada para SKU: {$sku} en path: {$pattern}, inactivando.");
                         // actualizamos el estado a 0 (inactivo)
-                       // DB::table('product_flat')->where('product_id', $product->id)->update(['status' => 0]);
+                        DB::table('product_flat')->where('product_id', $product->id)->update(['status' => 0]);
                     }
                 }
             }
