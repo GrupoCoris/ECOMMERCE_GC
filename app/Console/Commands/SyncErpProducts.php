@@ -144,8 +144,13 @@ class SyncErpProducts extends Command
                         $this->info("Se vincularon " . count($matches) . " imágenes para el SKU: {$sku}");
                     } else {
                         $this->warn("Imagen física no encontrada para SKU: {$sku} en path: {$pattern}, inactivando.");
+                        
                         // actualizamos el estado a 0 (inactivo)
-                        DB::table('product_flat')->where('product_id', $product->id)->update(['status' => 0]);
+                        $statusAttribute = app('Webkul\Attribute\Repositories\AttributeRepository')->findOneByField('code', 'status');
+                        DB::table('product_attribute_values')
+                            ->where('product_id', $product->id)
+                            ->where('attribute_id', $statusAttribute->id)
+                            ->update(['boolean_value' => 0]);
                     }
                 }
             }
