@@ -64,11 +64,12 @@ class ProductDataGrid extends DataGrid
                 'product_flat.visible_individually',
                 'af.name as attribute_family',
             )
-            ->addSelect(DB::raw('SUM(DISTINCT '.$tablePrefix.'product_inventories.qty) as quantity'))
-            ->addSelect(DB::raw('COUNT(DISTINCT '.$tablePrefix.'product_images.id) as images_count'))
+            ->addSelect(DB::raw('SUM(DISTINCT ' . $tablePrefix . 'product_inventories.qty) as quantity'))
+            ->addSelect(DB::raw('COUNT(DISTINCT ' . $tablePrefix . 'product_images.id) as images_count'))
             ->where('product_flat.locale', app()->getLocale())
             ->groupBy('product_flat.product_id');
 
+        $this->addFilter('category_id', 'pc.category_id');
         $this->addFilter('product_id', 'product_flat.product_id');
         $this->addFilter('channel', 'product_flat.channel');
         $this->addFilter('locale', 'product_flat.locale');
@@ -97,7 +98,7 @@ class ProductDataGrid extends DataGrid
                 'filterable'         => true,
                 'filterable_type'    => 'dropdown',
                 'filterable_options' => collect($channels)
-                    ->map(fn ($channel) => ['label' => $channel->name, 'value' => $channel->code])
+                    ->map(fn($channel) => ['label' => $channel->name, 'value' => $channel->code])
                     ->values()
                     ->toArray(),
                 'sortable'   => true,
@@ -123,12 +124,18 @@ class ProductDataGrid extends DataGrid
         ]);
 
         $this->addColumn([
-            'index'              => 'attribute_family',
-            'label'              => trans('admin::app.catalog.products.index.datagrid.attribute-family'),
-            'type'               => 'string',
+            'index'              => 'category_id',
+            'label'              => trans('admin::app.catalog.products.index.datagrid.category'),
+            'type'               => 'integer',
             'filterable'         => true,
             'filterable_type'    => 'dropdown',
-            'filterable_options' => $this->attributeFamilyRepository->all(['name as label', 'id as value'])->toArray(),
+            'filterable_options' => DB::table('categories')
+                ->join('category_translations', 'categories.id', '=', 'category_translations.category_id')
+                ->where('category_translations.locale', app()->getLocale())
+                ->select('categories.id as value', 'category_translations.name as label')
+                ->get()
+                ->toArray(),
+            'filter_column_name' => 'pc.category_id',
         ]);
 
         $this->addColumn([
@@ -186,11 +193,6 @@ class ProductDataGrid extends DataGrid
             'sortable'   => true,
         ]);
 
-        $this->addColumn([
-            'index'      => 'category_name',
-            'label'      => trans('admin::app.catalog.products.index.datagrid.category'),
-            'type'       => 'string',
-        ]);
 
         $this->addColumn([
             'index'              => 'type',
@@ -199,7 +201,7 @@ class ProductDataGrid extends DataGrid
             'filterable'         => true,
             'filterable_type'    => 'dropdown',
             'filterable_options' => collect(config('product_types'))
-                ->map(fn ($type) => ['label' => trans($type['name']), 'value' => $type['key']])
+                ->map(fn($type) => ['label' => trans($type['name']), 'value' => $type['key']])
                 ->values()
                 ->toArray(),
             'sortable'   => true,
@@ -331,7 +333,7 @@ class ProductDataGrid extends DataGrid
 
         if ($ids) {
             $this->queryBuilder
-                ->orderBy(DB::raw('FIELD('.DB::getTablePrefix().'product_flat.product_id, '.implode(',', $ids).')'));
+                ->orderBy(DB::raw('FIELD(' . DB::getTablePrefix() . 'product_flat.product_id, ' . implode(',', $ids) . ')'));
         }
 
         $total = $results['hits']['total']['value'];
