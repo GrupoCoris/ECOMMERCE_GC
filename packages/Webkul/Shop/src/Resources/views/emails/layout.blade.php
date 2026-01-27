@@ -32,13 +32,13 @@
                             <img
                                 src="{{ $logo }}"
                                 alt="{{ config('app.name') }}"
-                                style="height: auto; width: 110px;"
+                                style="height: auto; width: 200px;"
                             />
                         @else
                             <img
                                 src="{{ bagisto_asset('images/logo.svg', 'shop') }}"
                                 alt="{{ config('app.name') }}"
-                                style="width: 156px;height: auto;"
+                                style="width: 200px;height: auto;"
                             />
                         @endif
                     </a>
